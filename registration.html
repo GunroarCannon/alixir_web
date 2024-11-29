@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Sign-Up Form</title>
+    <link rel="stylesheet" href="assets/css/registration.css">
+</head>
+
+<body>
+    <img src="assets/registeration.png" alt="register">
+
+    <div class="container">
+        <h2 align="center">Sign Up for the Auction</h2>
+        <p align="center" style="font-size: 14px; text-transform: uppercase; color: #5a6869;">Fill in the information below to get your<br>auction ticket for entry</p>
+        <form id="registration-form">
+            <div class="input-group">
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName">
+                </div>
+
+                <div>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName">
+                </div>
+            </div>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="address">Street Address:</label>
+            <input type="text" id="address" name="address">
+
+            <div class="input-group">
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+
+                </div>
+                <div>    
+                    <label for="state">State/Province:</label>
+                    <input type="text" id="state" name="state">
+                </div>
+            </div>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Get Auction Ticket</button>
+        </form>
+    </div>
+
+    <div class="success-modal" id="success-modal">
+        <div class="success-content">
+            <div class="checkmark">
+                <img src="assets/checkmark.png" alt="">
+            </div>
+            <div>
+                <h2 class="success-title">TICKET<br>REGISTERED</h2>
+                <p class="success-message">Kindly check your email to save/<br>print your auction ticket</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+    document.getElementById('registration-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch('/register', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+       if (data.error) {
+          alert(data.error);
+       } else {
+          console.log(data);
+          console.log("done sql");
+           // Show success modal
+          const modal = document.getElementById('success-modal');
+          modal.classList.add('active');
+       }
+     })
+    .catch(error => console.error(error));
+  });
+
+        
+            
+     
+
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('success-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

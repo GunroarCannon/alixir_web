@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+img{
+    width: 50%;
+    /* float: left; */
+    height: 100%;
+    object-fit: cover;
+
+}
+.container {
+    /* float: right; */
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+#phone{
+    width: 50%;
+}
+
+input,
+textarea {
+    padding: 10px;
+    outline: none;
+    margin-bottom: 15px;
+    border: 1px solid #90ceb9;
+    background: #F1F7ED;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    background: #3F5B52;
+    color: white;
+    /* padding: 10px; */
+    outline: none;
+    border: 0;
+    font-weight: 700;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 20px;
+}
+.input-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Success Modal */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.success-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-content {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.success-modal.active .success-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.checkmark {
+    /* width: 80px; */
+    /* height: 80px; */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+.checkmark img{
+    height: 200px;
+    width: 200px;
+}
+
+.success-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .registration-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .container, img{
+        width: 100%;
+    }
+}

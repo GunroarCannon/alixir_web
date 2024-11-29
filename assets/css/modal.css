@@ -1,0 +1,151 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.artwork-image {
+    width: 50%;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.artwork-details {
+    width: 50%;
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.lot-number {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.share-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.artwork-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.artwork-description {
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.location {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.specifications {
+    margin-bottom: 2rem;
+}
+
+.specifications h3 {
+    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.spec-item {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.bid-section {
+    margin-bottom: 2rem;
+}
+
+.bid-label {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.bid-amount {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.auction-button {
+    width: 100%;
+    padding: 1rem;
+    background: #4a5859;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auction-button:hover {
+    background: #5a6869;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        flex-direction: column;
+    }
+
+    .artwork-image,
+    .artwork-details {
+        width: 100%;
+    }
+
+    .artwork-details {
+        padding: 1.5rem;
+    }
+}

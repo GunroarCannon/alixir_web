@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTLIXIR Gallery</title>
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <!-- <link rel="stylesheet" href="assets/css/modal.css"> -->
+</head>
+<body>
+    <nav class="nav">
+        <a href="#" class="logo">
+            <div class="logo-icon"></div>
+            ARTLIXIR
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="#">Gallery</a>
+            <a href="registration.html">Register</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Explore Our Gallery</h1>
+        
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search">
+    <div class="search-suggestion">Suggestion: A colorful oil painting with smiley face</div>
+  </div> 
+  </header>
+
+    <main class="gallery">
+        
+    </main>
+
+    <button class="load-more">
+        <img src="assets/loadmore.png" alt="Load More">
+        LOAD MORE
+    </button>
+
+    <div class="modal" id="modal">
+        <button class="close-button" onclick="closeModal()">×</button>
+        <div class="modal-content">
+            
+            <div class="image-container">
+                <img 
+                    src="" 
+                    alt="" 
+                    class="artwork-image"
+                    id="modal-image"
+                >
+            </div>
+            <div class="artwork-details">
+                <div class="artwork-header">
+                    <span class="lot-number">Lot #20</span>
+                    <button class="share-button">
+                        Share
+                    </button>
+                </div>
+                
+                <h1 id="modal-title" class="artwork-title">Koplan Chain</h1>
+                <p id="modal-description" class="modal-description artwork-description">Seating on the fertile floor admiring the beautiful flower.</p>
+                <p class="location">Nigeria</p>
+
+                <div class="specifications">
+                    <p>Specifications</p>
+                    <p class="spec-item">Etching And Aquatint in Colors</p>
+                    <p class="spec-item">Arches Paper Full Margins</p>
+                    <p class="spec-item">39 9/10 x 27 9/12 in | 101.4 x 70.5cm</p>
+                </div>
+
+                <div class="bid-section">
+                    <p class="bid-label">Initial Bid Price:</p>
+                    <p id="modal-price" class="bid-amount">$1,000</p>
+                </div>
+
+                <button class="auction-button">GET AUCTION TICKET</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+// Load JSON data
+//fetch('art-cards.json')
+ // .then(response => response.json())
+ // .then(data => {
+    const data = 
+[
+  {
+    "id": 1,
+    "title": "Art Card 1",
+    "image": "(link unavailable)",
+    "location": "New York",
+    "bidAmount": "$1,000"
+  },
+  {
+    "id": 2,
+    "title": "Art Card 2",
+    "image": "(link unavailable)",
+    "location": "London",
+    "bidAmount": "$2,000"
+  },
+  {
+    "id": 3,
+    "title": "Roadside #13",
+    "image": "(link unavailable)",
+    "location": "Nigeria",
+    "bidAmount": "$1,500"
+  },
+  {
+    "id": 1,
+    "title": "Art Card 1",
+    "image": "(link unavailable)",
+    "location": "New York",
+    "bidAmount": "$1,000"
+  },
+  {
+    "id": 2,
+    "title": "Art Card 2",
+    "image": "(link unavailable)",
+    "location": "London",
+    "bidAmount": "$2,000"
+  },
+  {
+    "id": 3,
+    "title": "Roadside #13",
+    "image": "(link unavailable)",
+    "location": "Nigeria",
+    "bidAmount": "$1,500"
+  },
+  {
+    "id": 1,
+    "title": "Art Card 1",
+    "image": "(link unavailable)",
+    "location": "New York",
+    "bidAmount": "$1,000"
+  },
+  {
+    "id": 2,
+    "title": "Art Card 2",
+    "image": "(link unavailable)",
+    "location": "London",
+    "bidAmount": "$2,000"
+  },
+  {
+    "id": 3,
+    "title": "Robanaide #13",
+    "image": "(link unavailable)",
+    "location": "Nigeria",
+    "bidAmount": "$1,500"
+  }
+];
+    const artCardsContainer = document.querySelector('.gallery');
+    const loadMoreButton = document.querySelector('.load-more');
+    const searchInput = document.getElementById('search-input');
+    const cardsPerPage = 3;
+    let currentPage = 1;
+
+    // Function to create art cards
+    function createArtCard(card) {
+      const artCard = `
+        <div class="art-card">
+          <div class="art-image-container">
+            <img src="${card.image}" alt="${card.title}" id="art-image" class="gallery-item-image">
+          </div>
+          <div class="art-info">
+            <div class="art-t-l">
+              <h3 class="art-title">${card.title}</h3>
+              <p class="art-location">${card.location}</p>
+            </div>
+            <div class="art-bid">
+              <span class="bid-label">Initial bid</span>
+              <span class="bid-amount">${card.bidAmount}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      artCardsContainer.insertAdjacentHTML('beforeend', artCard);
+    }
+
+    // Load initial cards
+    data.slice(0, cardsPerPage).forEach(createArtCard);
+
+    // Load More functionality
+    loadMoreButton.addEventListener('click', () => {
+      const start = currentPage * cardsPerPage;
+      const end = start + cardsPerPage;
+      const chunk = data.slice(start, end);
+
+      chunk.forEach(createArtCard);
+
+      currentPage++;
+    loadMoreButton.style.backgroundColor = '#f00';
+
+
+      // Hide Load More button if all cards are loaded
+      if (end >= data.length) {
+        loadMoreButton.style.display = 'none';
+      }
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', () => {
+      const searchQuery = searchInput.value.toLowerCase();
+
+      // Clear existing art cards
+      artCardsContainer.innerHTML = '';
+
+      // Filter and load matching art cards
+      data.filter(card => {
+        return card.title.toLowerCase().includes(searchQuery) || card.location.toLowerCase().includes(searchQuery);
+      }).slice(0, cardsPerPage).forEach(createArtCard);
+
+      // Update Load More button visibility
+      if (data.filter(card => card.title.toLowerCase().includes(searchQuery) || card.location.toLowerCase().includes(searchQuery)).length <= cardsPerPage) {
+        loadMoreButton.style.display = 'none';
+      } else {
+        loadMoreButton.style.display = 'block';
+      }
+    });
+  
+ // .catch(error => console.error('Error loading JSON data:', error));
+
+// Modal functionality remains the same
+document.querySelectorAll('.art-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const modal = document.getElementById('modal');
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    document.querySelector("#modal-image").src = card.querySelector("#art-image").src;
+    document.querySelector("#modal-title").textContent = card.querySelector(".art-title").textContent;
+    document.querySelector("#modal-price").textContent = card.querySelector(".bid-amount").textContent;
+  });
+});
+
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+  modal.style.display = 'none';
+}
+
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+    </script>
+</body>
+</html>

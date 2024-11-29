@@ -1,0 +1,24 @@
+
+[
+  {
+    "id": 1,
+    "title": "Art Card 1",
+    "image": "(link unavailable)",
+    "location": "New York",
+    "bidAmount": "$1,000"
+  },
+  {
+    "id": 2,
+    "title": "Art Card 2",
+    "image": "(link unavailable)",
+    "location": "London",
+    "bidAmount": "$2,000"
+  },
+  {
+    "id": 3,
+    "title": "Roadside #13",
+    "image": "(link unavailable)",
+    "location": "Nigeria",
+    "bidAmount": "$1,500"
+  }
+]

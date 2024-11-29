@@ -1,0 +1,53 @@
+.art-card {
+    width: 280px;
+    background: #F1F7ED;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-5px);
+}
+
+#art-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+.art-image-container{
+    margin: 20px;
+    border-radius: 16px;
+}
+.art-info {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.art-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #202523;
+    margin-bottom: 0.25rem;
+}
+
+.art-location {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.art-bid {
+    font-size: 0.875rem;
+    color: #666;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.bid-label {
+    font-weight: 400;
+    color: #202523;
+}
