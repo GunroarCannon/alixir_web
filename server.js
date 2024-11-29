@@ -248,4 +248,5 @@ app.listen(port, () => {
     console.log(`Server started on the wonderous port ${port}`);
 });
 
+module.exports = app;
 //
