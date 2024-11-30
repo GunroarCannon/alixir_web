@@ -4,4 +4,9 @@
         "src": "server.js",
         "use": "@vercel/node"
     }],
-    "routes": [{"src": "/(.*)", "dest": "server.js"}]}
+    "routes": [{"src": "/(.*)", "dest": "server.js"},
+    {
+"src": "/([^/]+)$",
+"dest": "/$1"
+    }
+    ]}
