@@ -2,8 +2,40 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const multer = require("multer");
-const fs = require("fs");
+//const fs = require("fs");
 const upload = multer();
+
+const fs = require('fs');
+//const path = require('path');
+
+const projectPath = path.join(__dirname);
+
+function traverseDirectory(dir) {
+  fs.readdir(dir, (err, files) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(`Files and directories in ${dir}:`);
+      files.forEach((file) => {
+        const filePath = path.join(dir, file);
+        fs.stat(filePath, (err, stats) => {
+          if (err) {
+            console.error(err);
+          } else {
+            if (stats.isDirectory()) {
+              traverseDirectory(filePath);
+            } else {
+              console.log(file);
+            }
+          }
+        });
+      });
+    }
+  });
+}
+
+traverseDirectory(projectPath);
+
 
 const port = 3000;
 
