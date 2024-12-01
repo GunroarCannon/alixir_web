@@ -93,66 +93,73 @@
 [
   {
     "id": 1,
-    "title": "Art Card 1",
-    "image": "(link unavailable)",
-    "location": "New York",
-    "bidAmount": "$1,000"
+    "title": "Tinga Tinga 1",
+    "image": "assets/tingatinga1.jpg",
+    "location": "Tanzania",
+    "bidAmount": "N10,000"
   },
   {
     "id": 2,
-    "title": "Art Card 2",
-    "image": "(link unavailable)",
-    "location": "London",
-    "bidAmount": "$2,000"
+    "title": "Tinga Tinga 2",
+    "image": "assets/tingatinga2.jpg",
+    "location": "Tanzania",
+    "bidAmount": "N52,000"
   },
   {
     "id": 3,
-    "title": "Roadside #13",
-    "image": "(link unavailable)",
+    "title": "Willie Wamuti",
+    "image": "assets/willie.jpg",
     "location": "Nigeria",
     "bidAmount": "$1,500"
   },
   {
     "id": 1,
-    "title": "Art Card 1",
-    "image": "(link unavailable)",
-    "location": "New York",
-    "bidAmount": "$1,000"
+    "title": "Wycliffe Ndwiga",
+    "image": "assets/wildlife.jpg",
+    "location": "South Africa",
+    "bidAmount": "N50,000"
   },
   {
     "id": 2,
-    "title": "Art Card 2",
-    "image": "(link unavailable)",
-    "location": "London",
-    "bidAmount": "$2,000"
+    "title": "Joel Ngoko",
+    "image": "assets/joel.jpg",
+    "location": "Nigeria",
+    "bidAmount":"N55,600"
+},
+{
+    "title": "Meeting under the tree",
+    "location": "Congo",
+    "image":"assets/john.jpg",
+    "bidAmount": "N55,000",
+    "id": 5,
   },
   {
-    "id": 3,
-    "title": "Roadside #13",
-    "image": "(link unavailable)",
+    "id": 13,
+    "title": "Joseph Juma",
+    "image": "assets/joseph.jpg",
     "location": "Nigeria",
-    "bidAmount": "$1,500"
+    "bidAmount": "N34, 500"
   },
   {
     "id": 1,
-    "title": "Art Card 1",
-    "image": "(link unavailable)",
-    "location": "New York",
-    "bidAmount": "$1,000"
+    "title": "Joseph Thiongo",
+    "image": "assets/josepht.jpg",
+    "location": "Nigeria",
+    "bidAmount": "61,000"
   },
   {
     "id": 2,
-    "title": "Art Card 2",
-    "image": "(link unavailable)",
-    "location": "London",
-    "bidAmount": "$2,000"
+    "title": "Ndichu Njuguna",
+    "image": "assets/ndichu.jpg",
+    "location": "Nambia",
+    "bidAmount": "N122,000"
   },
   {
     "id": 3,
-    "title": "Robanaide #13",
-    "image": "(link unavailable)",
-    "location": "Nigeria",
-    "bidAmount": "$1,500"
+    "title": "Ole Kolii Paul",
+    "image": "assets/ole.jpg",
+    "location": "Zimbabwe",
+    "bidAmount": "N71,500"
   }
 ];
     const artCardsContainer = document.querySelector('.gallery');
@@ -195,7 +202,7 @@
       chunk.forEach(createArtCard);
 
       currentPage++;
-    loadMoreButton.style.backgroundColor = '#f00';
+  //  loadMoreButton.style.backgroundColor = '#f00';
 
 
       // Hide Load More button if all cards are loaded
