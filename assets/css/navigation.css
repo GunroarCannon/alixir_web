@@ -52,3 +52,35 @@
     justify-content: space-between;
     align-items: center;
 }
+
+ 
+
+
+@media (max-width: 768px) {
+  .nav {
+    flex-directfion: row;
+    padding: 1rem;
+    justify-content: space-between;
+    top:0;
+    position: absolute;
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    overflow-x:auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    fflex-wrap:wrap;
+    margin-left: 2rem;
+  }
+}
+

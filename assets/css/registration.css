@@ -142,26 +142,61 @@ button {
 }
 
 .success-message {
-    color: #666;
+    color: #667;
     margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
-    .registration-container {
-        padding: 1.5rem;
-    }
-}
-
-@media (max-width: 768px){
-    body{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    .container, img{
-        width: 100%;
-    }
+  body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .registration-container {
+    padding: 1.5rem;
+  }
+  .container {
+    width: 100vw;
+    padding: 20px;
+    box-sizing:border-box;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #90ceb9;
+    background: #F1F7ED;
+    border-radius: 5px;
+  }
+  button {
+    width: 100%;
+    background: #3F5B52;
+    color: white;
+    padding: 10px;
+    border: 0;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 20px;
+  }
 }

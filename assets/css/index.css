@@ -1,5 +1,5 @@
 /* Reset and base styles */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -204,6 +204,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-x:auto;
 }
 
 /* Animations */
@@ -219,8 +220,8 @@
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Design 
+@media (max-width: 76008px) {
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -241,3 +242,90 @@
         flex-direction: column;
     }
 }
+*/
+/* Mobile-specific styles */
+
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    height: 80vh;
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Timer Section */
+  .timer-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .countdown {
+    font-size: 1.5rem;
+  }
+
+  /* About Section */
+  .about {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .about img {
+    width: 100%;
+    height: auto;
+  }
+  .about div {
+    margin-left: 0;
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 2rem 1rem;
+  }
+  .contact h1 {
+    font-size: 2rem;
+  }
+  .contact p {
+    font-size: 1rem;
+  }
+  .contact form {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+ 
+.about {
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.about img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.about div {
+  width: 80%;
+  margin-left: 0;
+}
+
+.about p {
+   word-wrap: break-wrap;
+width:100%;
+}
+
+
+
+}
+
+
